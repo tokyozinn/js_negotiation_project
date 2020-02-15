@@ -9,10 +9,21 @@ class NegociacaoController {
 
     adiciona(event){
         event.preventDefault();
+        
+        let data = new Date(
+            this.inputData.
+            value.
+            split('-').
+            map((item, index) => item - index % 2)
+        );
 
-        console.log(this.inputData.value);
-        console.log(this.inputQuantidade.value);
-        console.log(this.inputValor.value);  
+        let negociacao = new Negociacao(
+            data = data,
+            this.inputQuantidade.value,
+            this.inputValor.value
+        );
+
+        console.log(negociacao);
     }
 
 }
